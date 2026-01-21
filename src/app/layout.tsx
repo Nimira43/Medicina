@@ -1,6 +1,15 @@
 import type { Metadata } from 'next'
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 import { Poppins } from 'next/font/google'
 import '@/assets/styles/globals.css'
+import { Button } from '@/components/ui/button'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -18,10 +27,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={poppins.className}>
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body className={poppins.className}>
+          <header className="flex justify-end items-center p-4 gap-4 h-16">
+            <SignedOut>
+              <SignInButton>
+                <Button
+                  variant='outline'
+                >
+                  Login
+                </Button>
+              </SignInButton>
+              <SignUpButton>
+                <Button>
+                  Register
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </header>
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }
