@@ -6,7 +6,7 @@ async function DashboardPage() {
 
   return (
     <div className='p-5 flex flex-col gap-5'>
-      <h1>Dashboard Page</h1>
+      <h1 className=''>Dashboard Page</h1>
       <UserButton />
       <h1>Name: {user?.firstName} {user?.lastName}</h1>
       <h2>ID: {user?.id}</h2>
