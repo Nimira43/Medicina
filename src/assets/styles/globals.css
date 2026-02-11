@@ -80,3 +80,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+.cl-formField *,
+.cl-formField:focus-within,
+.cl-formFieldInput:focus-within {
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.cl-formFieldInput {
+  height: 45px !important;
+  border: 1px solid #999 !important;
+  border-radius: 3px !important;
+  background-color:#fff #fff !important;
+  box-shadow: none !important;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.cl-formFieldInput:focus,
+.cl-formFieldInput:hover {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: #1111e0 !important;
+}
+
+.cl-formButtonPrimary {
+  height: 40px !important;
+  text-transform: uppercase !important;
+  background-color: #1111e0 !important;
+}
+
+.cl-formButtonPrimary,
+.cl-formButtonPrimary * {
+  transition: background-color 0.5s ease-in-out !important;
+}
+
+.cl-formButtonPrimary:hover {
+  background-color: #0202a9 !important;
+}
+
+.cl-formButtonPrimary svg {
+  display: none !important;
+}

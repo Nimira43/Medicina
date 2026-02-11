@@ -2,8 +2,10 @@ import { SignUp } from '@clerk/nextjs'
 
 export default function Page() {
   return (
-    <SignUp
-      fallbackRedirectUrl='/admin/dashboard'
-    />
+    <div className='flex justify-center items-center h-screen bg-main'>
+      <SignUp
+        fallbackRedirectUrl='/admin/dashboard'
+      />
+    </div>
   )
 }

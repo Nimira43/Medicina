@@ -9,12 +9,20 @@ export default function HomePage() {
           Medicina Healthcare
         </Link>
 
-        <Link
-          href='/sign-in'
-          className='text-light hover:text-main-light transitioning font-medium uppercase'
-        >
-          Login
-        </Link>
+        <div className='flex gap-4'>
+          <Link
+            href='/sign-in'
+            className='text-light hover:text-main-light transitioning font-medium uppercase'
+          >
+            Login
+          </Link>
+          <Link
+            href='/sign-up'
+            className='text-light hover:text-main-light transitioning font-medium uppercase'
+          >
+            Register
+          </Link>  
+        </div>       
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 mt-20 md:mt-32  px-10'>
@@ -61,8 +69,7 @@ export default function HomePage() {
             <img
               src='/logo-4.png'
               alt='Medicina Logo'
-              // className='w-80 h-80 object-contain drop-shadow-xl'
-              className="w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-xl"
+              className='w-64 h-64 md:w-80 md:h-80 object-contain drop-shadow-xl'
 
             />
           </div>
