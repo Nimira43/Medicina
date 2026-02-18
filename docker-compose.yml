@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  mongodb:
+    image: mongo:7
+    container_name: medicina-mongo
+    restart: unless-stopped
+    ports:
+      - "5999:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - medicina-data:/data/db
+
+volumes:
+  medicina-data:
+    name: medicina-data
