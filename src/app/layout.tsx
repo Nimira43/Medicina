@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Poppins } from 'next/font/google'
 import '@/assets/styles/globals.css'
+// import { connectMongoDB } from '@/config/mongodb'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -13,11 +14,13 @@ export const metadata: Metadata = {
   description: 'Doctor\'s web application using Next, Tailwind and TypeScript',
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // await connectMongoDB()
+
   return (
     <ClerkProvider>
       <html lang="en">
