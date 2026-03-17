@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { ClerkProvider } from '@clerk/nextjs'
 import { Poppins } from 'next/font/google'
 import '@/assets/styles/globals.css'
-// import { connectMongoDB } from '@/config/mongodb'
+import { connectMongoDB } from '@/config/mongodb'
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -19,7 +19,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // await connectMongoDB()
+  await connectMongoDB()
 
   return (
     <ClerkProvider>
