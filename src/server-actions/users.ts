@@ -36,7 +36,6 @@ export const getUserDataFromMongoDB = async() => {
     if (userFromMongoDB) {
       return {
         success: true,
-        message: 'User data fetched successfully.',
         data: JSON.parse(JSON.stringify(userFromMongoDB)),
       }
     }
